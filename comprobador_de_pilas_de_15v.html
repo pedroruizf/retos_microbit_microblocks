@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>comprobador de pilas de 1,5V | Retos de Micro:bit con Microblocks </title>
+<title>Comprobador de pilas de 1,5V | Retos de Micro:bit con Microblocks </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta name="author" content="Pedro Ruiz Fernández" />
 <link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
@@ -26,21 +26,27 @@
    <li><a href="animacin_01.html" class="no-ch">Animación 01</a></li>
    <li><a href="animacin_02.html" class="no-ch">Animación 02</a></li>
    <li><a href="animacin_03.html" class="no-ch">Animación 03</a></li>
-   <li><a href="botones.html" class="no-ch">Botones</a></li>
    <li><a href="animacin_scroll.html" class="no-ch">Animación Scroll</a></li>
-   <li id="active"><a href="comprobador_de_pilas_de_15v.html" class="active no-ch">comprobador de pilas de 1,5V</a></li>
+   <li><a href="pulsadores.html" class="no-ch">Pulsadores</a></li>
+   <li id="active"><a href="comprobador_de_pilas_de_15v.html" class="active no-ch">Comprobador de pilas de 1,5V</a></li>
    <li><a href="contador_de_pasos.html" class="no-ch">Contador de pasos</a></li>
    <li><a href="multitarea.html" class="no-ch">Multitarea</a></li>
+   <li><a href="sensor_de_inclinacin.html" class="no-ch">Sensor de inclinación</a></li>
+   <li><a href="sensor_de_luz.html" class="no-ch">Sensor de Luz</a></li>
+   <li><a href="servo_y_dos_pulsadores.html" class="no-ch">Servo y dos pulsadores</a></li>
+   <li><a href="servo_y_un_pulsador.html" class="no-ch">Servo y un pulsador</a></li>
+   <li><a href="servo_y_un_pulsador_con_variable.html" class="no-ch">Servo y un pulsador con variable</a></li>
+   <li><a href="servo_y_micro.html" class="no-ch">Servo y micro</a></li>
 </ul>
 </nav>
 <div id='topPagination'>
 <nav class="pagination noprt">
-<a href="animacin_scroll.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="contador_de_pasos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+<a href="pulsadores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="contador_de_pasos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </nav>
 </div>
 <div id="main-wrapper">
 <section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">comprobador de pilas de 1,5V</h1></header>
+<header id="nodeDecoration"><h1 id="nodeTitle">Comprobador de pilas de 1,5V</h1></header>
 <article class="iDevice_wrapper textIdevice em_iDevice" id="id8">
 <div class="iDevice emphasis1" >
 <header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Medida analógicas en pines de micro:bit</h1></header>
@@ -48,7 +54,7 @@
 <div class="iDevice_content_wrapper">
 <div id="ta8_120_2" class="block iDevice_content">
 <div class="exe-text"><p>Micro:bit tiene una serie de pines accesibles mediante pinzas de cocodrilo, 0, 1 y 2, además de alimentación a 3V y GND. Estos pines en Micro:bit son GPIO (general purpose IO), por tanto se pueden usar como entradas (lectura de datos de sensores) tanto analógicas como digitales y también como salida (para conectar en ellos actuadores).</p>
-<p>En nuestro reto haremos una lectura analógica del pin 0, siendo capaz de medir un voltaje comprendido entre 0 y 3 Voltios, que se corresponde respectivamente a unos valores de lectura entre 0 y 1023. ¡OJO! no podemos hacer lecturas superiores a 3V (pilas que superen ese voltaje), ya que ponemos en peligro el pin y la placa.</p>
+<p>En nuestro reto haremos una lectura analógica del pin 0, siendo capaz de medir un voltaje comprendido entre 0 y 3,3 Voltios, que se corresponde respectivamente a unos valores de lectura entre 0 y 1023. ¡OJO! no podemos hacer lecturas superiores a 3V (pilas que superen ese voltaje), ya que ponemos en peligro el pin y la placa.</p>
 <p><img src="pinout.png" alt="pinout" title="pinout" width="500" height="485" /></p>
 <p></p></div>
 </div>
@@ -62,7 +68,7 @@
 <div class="iDevice_inner">
 <div class="iDevice_content_wrapper">
 <div id="ta9_121_2" class="block iDevice_content">
-<div class="pbl-task-description"><p>El reto consiste en la medición del voltaje de una pila de 1,5 Voltios nominal, en el pin 1 de micro:bit. Representaremos en la pantalla de micro:bit una serie de filas en función del nivel de energía de la pila, además de mostrar el valor de la lectura en el programa y en una gráfica todo en tiempo real. Recordamos que los pines de micro:bit pueden leer valores entre 0 y 3V con valores de medida comprendidos entre 0 y 1023 respectivamente, por tanto si conectamos una pila de 1,5 Voltios y está en un estado de carga correcta debería dar un valor entorno a 512 en la lectura analógica del pin.</p>
+<div class="pbl-task-description"><p>El reto consiste en la medición del voltaje de una pila de 1,5 Voltios nominal, en el pin 1 de micro:bit. Representaremos en la pantalla de micro:bit una serie de filas en función del nivel de energía de la pila, además de mostrar el valor de la lectura en el programa y en una gráfica todo en tiempo real. Recordamos que los pines de micro:bit pueden leer valores entre 0 y 3,3 V con valores de medida comprendidos entre 0 y 1023 respectivamente, por tanto si conectamos una pila de 1,5 Voltios y está en un estado de carga correcta debería dar un valor entorno a 465 en la lectura analógica del pin.</p>
 <p>La forma de conectar el sistema sería pinza de cocodrilo a pin 1 y polo + de la pila, y pinza de cocodrilo a GND y polo - de la pila.</p>
 <p><img src="reto06a.gif" alt="reto 06a gif" title="reto 06a gif" width="401" height="225" style="float: left;" /></p>
 <p><img src="reto06b.gif" alt="reto 6b gif" title="reto 6b gif" width="600" height="339" /></p></div><div class="iDevice_buttons feedback-button js-required"><input type="button" class="feedbackbutton" value="Ayuda" /></div><div class="feedback js-feedback js-hidden"><p>Código:</p>
@@ -79,7 +85,7 @@
 </div>
 <div id='bottomPagination'>
 <nav class="pagination noprt">
-<a href="animacin_scroll.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="contador_de_pasos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+<a href="pulsadores.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="contador_de_pasos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
 </nav>
 </div>
 </div>
